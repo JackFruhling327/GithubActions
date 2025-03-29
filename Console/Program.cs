@@ -86,7 +86,12 @@ public class Program
 	// Implement this method following a similar pattern as above
 	public static double Power(string x, string y)
 	{    
-       double baseValue = Convert.ToDouble(x);
+         if (x == null || y == null)
+    {
+        throw new ArgumentNullException("Neither x or y can be null.");
+    }
+	   
+	   double baseValue = Convert.ToDouble(x);
 	     double exponentValue = Convert.ToDouble(y);
 	   return Math.Pow(baseValue, exponentValue);
 	}
